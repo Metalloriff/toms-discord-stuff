@@ -1,0 +1,135 @@
+@import "../Variables.scss";
+
+.MainPage {
+  .ItemsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    > .Title {
+      font-size: 1.5em;
+      font-weight: bolder;
+      
+      margin-top: 50px;
+      
+      svg {
+        margin-right: 10px;
+      }
+    }
+    
+    > .Description {
+      max-width: 600px;
+      text-align: center;
+      
+      color: darken(white, 25%);
+      margin: 10px 0;
+    }
+  }
+  
+  .Items {
+    padding: 20px;
+    
+    .AddonItem {
+      background-color: $secondaryBG;
+      border-radius: $primaryBorderRadius;
+      
+      width: 600px;
+      max-width: 90vw;
+      
+      display: flex;
+      flex-direction: column;
+      
+      margin-bottom: 30px;
+      
+      .Header {
+        display: flex;
+        background-color: $tertiaryBG;
+        
+        padding: 10px;
+        z-index: 5;
+        
+        border-top-left-radius: $primaryBorderRadius;
+        border-top-right-radius: $primaryBorderRadius;
+        
+        > .Name {
+          font-size: 1.1em;
+          font-weight: bolder;
+        }
+        
+        > .Version {
+          margin-left: auto;
+          font-weight: bolder;
+          
+          color: $primaryColor;
+        }
+      }
+      
+      .Previews {
+        position: relative;
+        
+        img {
+          width: 100%;
+          margin: -5px 0;
+          cursor: pointer;
+        }
+      }
+      
+      .Footer {
+        margin-top: auto;
+        display: flex;
+        flex-direction: column;
+        
+        padding: 10px;
+        background-color: $tertiaryBG;
+        
+        border-bottom-left-radius: $primaryBorderRadius;
+        border-bottom-right-radius: $primaryBorderRadius;
+        
+        z-index: 5;
+        
+        .Description {
+          
+        }
+        
+        .ButtonsContainer {
+          display: flex;
+          margin-top: 10px;
+          
+          .Button {
+            padding: 5px 10px;
+            border-radius: $primaryBorderRadius;
+            
+            border: 0.1em solid $primaryHover;
+            margin-right: 10px;
+
+            cursor: pointer;
+            transition: border-color $ft;
+            
+            &:Hover {
+              border-color: $primaryColor;
+            }
+            
+            .Icon {
+              font-size: 0.9em;
+              margin-right: 6px;
+            }
+          }
+        }
+      }
+      
+      &.Deprecated {
+        opacity: 0.5;
+        
+        transition: opacity $ft;
+        
+        &:Hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.Mobile .MainPage {
+	
+}
